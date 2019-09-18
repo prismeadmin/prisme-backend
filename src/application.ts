@@ -1,15 +1,16 @@
-import {BootMixin} from '@loopback/boot';
-import {ApplicationConfig} from '@loopback/core';
+import { BootMixin } from '@loopback/boot';
+import { ApplicationConfig } from '@loopback/core';
 import {
   RestExplorerBindings,
   RestExplorerComponent,
 } from '@loopback/rest-explorer';
-import {RepositoryMixin} from '@loopback/repository';
-import {RestApplication} from '@loopback/rest';
-import {ServiceMixin} from '@loopback/service-proxy';
+import { RepositoryMixin } from '@loopback/repository';
+import { RestApplication } from '@loopback/rest';
+import { ServiceMixin } from '@loopback/service-proxy';
 import * as path from 'path';
-import {MySequence} from './sequence';
-import {BcryptHasher} from './services/hash.password.bcrypt';
+import { MySequence } from './sequence';
+import { BcryptHasher } from './services/hash.password.bcrypt';
+import { MyUserService } from './services/user-service';
 
 export class TestAppApplication extends BootMixin(
   ServiceMixin(RepositoryMixin(RestApplication)),
@@ -47,5 +48,6 @@ export class TestAppApplication extends BootMixin(
   setupBinding(): void {
     this.bind('service.hasher').toClass(BcryptHasher);
     this.bind('rounds').to(10);
+    this.bind('services.user.service').toClass(MyUserService)
   }
 }
