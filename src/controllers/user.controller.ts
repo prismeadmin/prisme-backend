@@ -3,7 +3,9 @@ import {UserRepository} from '../repositories';
 import {post, getJsonSchemaRef, requestBody} from '@loopback/rest';
 import {validateCredentials} from '../services/validator';
 import {User} from '../models';
+import {inject} from '@loopback/core';
 import * as _ from 'lodash';
+import {BcryptHasher} from '../services/hash.password.bcrypt';
 
 // Uncomment these imports to begin using these cool features!
 
@@ -13,6 +15,8 @@ export class UserController {
   constructor(
     @repository(UserRepository)
     public userRepository: UserRepository,
+    @inject('service.hasher')
+    public hasher: BcryptHasher,
   ) {}
 
   @post('/signup', {
@@ -27,6 +31,7 @@ export class UserController {
   })
   async signup(@requestBody() userData: User) {
     validateCredentials(_.pick(userData, ['email', 'password']));
+    userData.password = await this.hasher.hashPassword(userData.password);
     const savedUser = await this.userRepository.create(userData);
     delete savedUser.password;
     return savedUser;
