@@ -6,13 +6,14 @@ import { HttpErrors } from '@loopback/rest';
 import { inject } from '@loopback/core';
 import { BcryptHasher } from './hash.password.bcrypt';
 import { UserProfile, securityId } from '@loopback/security';
+import { PasswordHasherBindings } from '../keys';
 
 
 export class MyUserService implements UserService<User, Credentials>{
   constructor(
     @repository(UserRepository)
     public userRepository: UserRepository,
-    @inject('service.hasher')
+    @inject(PasswordHasherBindings.PASSWORD_HASHER)
     public hasher: BcryptHasher
   ) { }
 

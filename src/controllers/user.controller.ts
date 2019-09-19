@@ -8,6 +8,8 @@ import * as _ from 'lodash';
 import { BcryptHasher } from '../services/hash.password.bcrypt';
 import { CreadentialsRequestBody, ResponseType } from './specs/user.controller.specs'
 import { MyUserService } from '../services/user-service'
+import { JWTService } from '../services/jwt-service';
+import { PasswordHasherBindings, UserServiceBindings, TokenServiceBindings } from '../keys';
 
 // Uncomment these imports to begin using these cool features!
 
@@ -17,10 +19,12 @@ export class UserController {
   constructor(
     @repository(UserRepository)
     public userRepository: UserRepository,
-    @inject('service.hasher')
+    @inject(PasswordHasherBindings.PASSWORD_HASHER)
     public hasher: BcryptHasher,
-    @inject('services.user.service')
-    public userService: MyUserService
+    @inject(UserServiceBindings.USER_SERVICE)
+    public userService: MyUserService,
+    @inject(TokenServiceBindings.TOKEN_SERVICE)
+    public jwtService: JWTService
   ) { }
 
   @post('/users/signup', {
@@ -49,6 +53,7 @@ export class UserController {
     console.log(user)
     const userProfile = this.userService.convertToUserProfile(user)
     console.log(userProfile)
-    return Promise.resolve({ token: '5646345346547658578' })
+    const token = await this.jwtService.generateToken(userProfile)
+    return Promise.resolve({ token })
   }
 }

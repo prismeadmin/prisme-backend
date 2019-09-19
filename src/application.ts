@@ -11,6 +11,13 @@ import * as path from 'path';
 import { MySequence } from './sequence';
 import { BcryptHasher } from './services/hash.password.bcrypt';
 import { MyUserService } from './services/user-service';
+import { JWTService } from './services/jwt-service';
+import {
+  TokenServiceConstants,
+  TokenServiceBindings,
+  PasswordHasherBindings,
+  UserServiceBindings,
+} from './keys';
 
 export class TestAppApplication extends BootMixin(
   ServiceMixin(RepositoryMixin(RestApplication)),
@@ -46,8 +53,15 @@ export class TestAppApplication extends BootMixin(
   }
 
   setupBinding(): void {
-    this.bind('service.hasher').toClass(BcryptHasher);
-    this.bind('rounds').to(10);
-    this.bind('services.user.service').toClass(MyUserService)
+    this.bind(PasswordHasherBindings.PASSWORD_HASHER).toClass(BcryptHasher);
+    this.bind(PasswordHasherBindings.ROUNDS).to(10);
+    this.bind(UserServiceBindings.USER_SERVICE).toClass(MyUserService);
+    this.bind(TokenServiceBindings.TOKEN_SERVICE).toClass(JWTService);
+    this.bind(TokenServiceBindings.TOKEN_SECRET).to(
+      TokenServiceConstants.TOKEN_SECRET_VALUE,
+    );
+    this.bind(TokenServiceBindings.TOKEN_EXPIRES_IN).to(
+      TokenServiceConstants.TOKEN_EXPIRES_IN_VALUE,
+    );
   }
 }
