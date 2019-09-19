@@ -4,6 +4,10 @@ import {
   RestExplorerBindings,
   RestExplorerComponent,
 } from '@loopback/rest-explorer';
+import {
+  AuthenticationComponent,
+  registerAuthenticationStrategy,
+} from '@loopback/authentication';
 import { RepositoryMixin } from '@loopback/repository';
 import { RestApplication } from '@loopback/rest';
 import { ServiceMixin } from '@loopback/service-proxy';
@@ -18,6 +22,7 @@ import {
   PasswordHasherBindings,
   UserServiceBindings,
 } from './keys';
+import { JWTAuthenticationStrategy } from './authentication-strategies/jwt-strategy';
 
 export class TestAppApplication extends BootMixin(
   ServiceMixin(RepositoryMixin(RestApplication)),
@@ -27,6 +32,10 @@ export class TestAppApplication extends BootMixin(
 
     // Set up binding
     this.setupBinding();
+
+    this.component(AuthenticationComponent);
+
+    registerAuthenticationStrategy(this, JWTAuthenticationStrategy);
 
     // Set up the custom sequence
     this.sequence(MySequence);
