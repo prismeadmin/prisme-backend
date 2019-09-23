@@ -4,6 +4,7 @@ import { post, getJsonSchemaRef, requestBody, get, put, param, getModelSchemaRef
 import { validateCredentials } from '../services/validator';
 import { User } from '../models';
 import { inject } from '@loopback/core';
+import { sendEmail } from '../services/Mailer'
 import * as _ from 'lodash';
 import { BcryptHasher } from '../services/hash.password.bcrypt';
 import { CreadentialsRequestBody, ResponseType } from './specs/user.controller.specs'
@@ -65,6 +66,8 @@ export class UserController {
     // eslint-disable-next-line require-atomic-updates
     userData.password = await this.hasher.hashPassword(userData.password);
     const savedUser = await this.userRepository.create(userData);
+    console.log(userData.email)
+    sendEmail(userData.email)
     delete savedUser.password;
     return savedUser;
   }
