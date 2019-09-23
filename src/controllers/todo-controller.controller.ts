@@ -17,20 +17,20 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import {Todo} from '../models';
-import {TodoRepository} from '../repositories';
+import { Todo } from '../models';
+import { TodoRepository } from '../repositories';
 
 export class TodoControllerController {
   constructor(
     @repository(TodoRepository)
     public todoRepository: TodoRepository,
-  ) {}
+  ) { }
 
   @post('/todos', {
     responses: {
       '200': {
         description: 'Todo model instance',
-        content: {'application/json': {schema: getModelSchemaRef(Todo)}},
+        content: { 'application/json': { schema: getModelSchemaRef(Todo) } },
       },
     },
   })
@@ -38,7 +38,7 @@ export class TodoControllerController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(Todo, {exclude: ['id']}),
+          schema: getModelSchemaRef(Todo, { exclude: ['id'] }),
         },
       },
     })
@@ -51,7 +51,7 @@ export class TodoControllerController {
     responses: {
       '200': {
         description: 'Todo model count',
-        content: {'application/json': {schema: CountSchema}},
+        content: { 'application/json': { schema: CountSchema } },
       },
     },
   })
@@ -67,7 +67,7 @@ export class TodoControllerController {
         description: 'Array of Todo model instances',
         content: {
           'application/json': {
-            schema: {type: 'array', items: getModelSchemaRef(Todo)},
+            schema: { type: 'array', items: getModelSchemaRef(Todo) },
           },
         },
       },
@@ -84,7 +84,7 @@ export class TodoControllerController {
     responses: {
       '200': {
         description: 'Todo PATCH success count',
-        content: {'application/json': {schema: CountSchema}},
+        content: { 'application/json': { schema: CountSchema } },
       },
     },
   })
@@ -92,7 +92,7 @@ export class TodoControllerController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(Todo, {partial: true}),
+          schema: getModelSchemaRef(Todo, { partial: true }),
         },
       },
     })
@@ -106,7 +106,7 @@ export class TodoControllerController {
     responses: {
       '200': {
         description: 'Todo model instance',
-        content: {'application/json': {schema: getModelSchemaRef(Todo)}},
+        content: { 'application/json': { schema: getModelSchemaRef(Todo) } },
       },
     },
   })
@@ -126,7 +126,7 @@ export class TodoControllerController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(Todo, {partial: true}),
+          schema: getModelSchemaRef(Todo, { partial: true }),
         },
       },
     })
@@ -142,6 +142,7 @@ export class TodoControllerController {
       },
     },
   })
+
   async replaceById(
     @param.path.string('id') id: string,
     @requestBody() todo: Todo,

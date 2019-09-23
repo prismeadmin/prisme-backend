@@ -1,6 +1,6 @@
 import { repository } from '@loopback/repository';
 import { UserRepository, Credentials } from '../repositories/';
-import { post, getJsonSchemaRef, requestBody, get } from '@loopback/rest';
+import { post, getJsonSchemaRef, requestBody, get, put, param } from '@loopback/rest';
 import { validateCredentials } from '../services/validator';
 import { User } from '../models';
 import { inject } from '@loopback/core';
@@ -66,5 +66,20 @@ export class UserController {
     currentUser: UserProfile
   ): Promise<UserProfile> {
     return Promise.resolve(currentUser)
+  }
+
+  @put('/users/{id}', {
+    responses: {
+      '204': {
+        description: 'Users PUT success',
+      },
+    },
+  })
+
+  async replaceById(
+    @param.path.string('id') id: string,
+    @requestBody() currentUser: User,
+  ): Promise<void> {
+    await this.userRepository.replaceById(id, currentUser);
   }
 }
