@@ -1,6 +1,6 @@
 import { repository } from '@loopback/repository';
 import { UserRepository, Credentials } from '../repositories/';
-import { post, getJsonSchemaRef, requestBody, get, put, param } from '@loopback/rest';
+import { post, getJsonSchemaRef, requestBody, get, put, param, getModelSchemaRef, HttpErrors } from '@loopback/rest';
 import { validateCredentials } from '../services/validator';
 import { User } from '../models';
 import { inject } from '@loopback/core';
@@ -34,13 +34,34 @@ export class UserController {
       '200': {
         description: 'User',
         content: {
-          schema: getJsonSchemaRef(User),
+          'application/json': {
+            schema: getJsonSchemaRef(User),
+          },
         },
       },
     },
   })
-  async signup(@requestBody() userData: User) {
+  async signup(
+    @requestBody({
+      content: {
+        'application/json': {
+          schema: getModelSchemaRef(User, { exclude: ['id'] }),
+        },
+      },
+    })
+    userData: Omit<User, 'id'>,
+  ): Promise<User> {
+    const foundUser = await this.userRepository.findOne({
+      where: {
+        email: userData.email,
+      },
+    });
+    if (foundUser) {
+      throw new HttpErrors.Forbidden(`Email ${userData.email} already exists`);
+    }
+
     validateCredentials(_.pick(userData, ['email', 'password']));
+
     // eslint-disable-next-line require-atomic-updates
     userData.password = await this.hasher.hashPassword(userData.password);
     const savedUser = await this.userRepository.create(userData);
