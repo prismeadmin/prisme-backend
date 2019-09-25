@@ -7,12 +7,13 @@ import { inject } from '@loopback/core';
 import { sendEmail } from '../services/Mailer'
 import * as _ from 'lodash';
 import { BcryptHasher } from '../services/hash.password.bcrypt';
-import { CreadentialsRequestBody, ResponseType } from './specs/user.controller.specs'
+import { CreadentialsRequestBody, ResponseType, VerifyRequestBody } from './specs/user.controller.specs'
 import { MyUserService } from '../services/user-service'
 import { JWTService } from '../services/jwt-service';
 import { PasswordHasherBindings, UserServiceBindings, TokenServiceBindings } from '../keys';
 import { UserProfile } from '@loopback/security';
 import { authenticate, AuthenticationBindings } from '@loopback/authentication';
+const randomstring = require("randomstring");
 
 // Uncomment these imports to begin using these cool features!
 
@@ -61,16 +62,21 @@ export class UserController {
       throw new HttpErrors.Forbidden(`Email ${userData.email} already exists`);
     }
 
-    validateCredentials(_.pick(userData, ['email', 'password']));
+    validateCredentials(_.pick(userData, ['email', 'password', 'active']));
 
     // eslint-disable-next-line require-atomic-updates
     userData.password = await this.hasher.hashPassword(userData.password);
+    const secretToken = randomstring.generate();
+    userData.secretToken = secretToken
+    userData.active = false
+    sendEmail(userData.email)
     const savedUser = await this.userRepository.create(userData);
     console.log(userData.email)
-    sendEmail(userData.email)
     delete savedUser.password;
     return savedUser;
   }
+
+
 
   @post('/users/login', ResponseType)
 
@@ -82,6 +88,31 @@ export class UserController {
     const token = await this.jwtService.generateToken(userProfile)
     return Promise.resolve({ token })
   }
+
+  @post('/users/verify')
+  async verify(
+    @requestBody(VerifyRequestBody) userData: User
+  ): Promise<User> {
+    try {
+      const foundUser = await this.userRepository.findOne({
+        where: {
+          secretToken: userData.secretToken,
+        }
+      })
+      if (!foundUser) {
+        throw new HttpErrors.Forbidden(`No user found`)
+      }
+
+      foundUser.active = true;
+      foundUser.secretToken = ''
+      const savedUser = await this.userRepository.create(foundUser);
+      return savedUser
+
+    } catch (err) {
+      throw new HttpErrors.Forbidden(`Account has not been verified`);
+    }
+  }
+
 
   @get('/users/me')
   @authenticate('jwt')

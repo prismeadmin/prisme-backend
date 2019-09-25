@@ -65,7 +65,8 @@
     "loopback-connector-mailgun": "0.0.13",
     "loopback-connector-mongodb": "^5.0.0",
     "passport": "^0.4.0",
-    "passport-http": "^0.3.0"
+    "passport-http": "^0.3.0",
+    "randomstring": "^1.1.5"
   },
   "devDependencies": {
     "@loopback/build": "^2.0.10",

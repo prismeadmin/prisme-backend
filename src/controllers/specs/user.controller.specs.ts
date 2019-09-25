@@ -11,7 +11,24 @@ export const CredentialsSchema = {
       minLength: 8
     }
   }
+}
 
+export const verifySchema = {
+  type: 'object',
+  required: ['secretToken'],
+  properties: {
+    secretToken: {
+      type: 'string'
+    }
+  }
+}
+
+export const VerifyRequestBody = {
+  description: 'The input of verify function',
+  required: true,
+  content: {
+    'application/json': { schema: verifySchema }
+  }
 }
 
 export const CreadentialsRequestBody = {

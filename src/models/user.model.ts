@@ -32,6 +32,19 @@ export class User extends Entity {
   })
   lastName: string;
 
+  @property({
+    type: 'string',
+    required: false
+  })
+  secretToken: string;
+
+  @property({
+    type: 'boolean',
+    required: false,
+    default: false
+  })
+  active: boolean;
+
   @property.array(String)
   permissions: String[]
 
