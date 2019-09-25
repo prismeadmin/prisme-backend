@@ -21,13 +21,12 @@ export class MyUserService implements UserService<User, Credentials>{
     const foundUser = await this.userRepository.findOne({
       where: {
         email: credentials.email,
+        password: credentials.password,
         active: credentials.active
       }
     })
 
-    if (!credentials.active) {
-      throw new HttpErrors.Unauthorized('user has not verified email')
-    }
+
 
     if (!foundUser) {
       throw new HttpErrors.NotFound(`user not found with this email: ${credentials.email}`)

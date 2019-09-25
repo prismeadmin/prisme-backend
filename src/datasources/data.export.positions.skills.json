@@ -1,0 +1,67 @@
+[
+  {
+    "name":"Business Analyst",
+    "skills":[
+      {
+        "name":"Listener",
+        "id":"1"
+      },
+      {
+        "name":"Critical Thinking",
+        "id":"2"
+      },
+      {
+        "name":"Problem Solving",
+        "id":"3"
+      },
+      {
+        "name":"Analytical",
+        "id":"4"
+      },
+      {
+        "name":"Communication",
+        "id":"5"
+      },
+      {
+        "name":"Documentation",
+        "id":"6"
+      },
+      {
+        "name":"Research",
+        "id":"7"
+      }
+    ]
+  },{
+    "name":"QA Analyst",
+    "skills":[
+      {
+        "name":"Listener",
+        "id":"1"
+      },
+      {
+        "name":"Critical Thinking",
+        "id":"2"
+      },
+      {
+        "name":"Problem Solving",
+        "id":"3"
+      },
+      {
+        "name":"Analytical",
+        "id":"4"
+      },
+      {
+        "name":"Communication",
+        "id":"5"
+      },
+      {
+        "name":"Documentation",
+        "id":"6"
+      },
+      {
+        "name":"Research",
+        "id":"7"
+      }
+    ]
+  }
+]
