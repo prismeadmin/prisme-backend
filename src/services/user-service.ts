@@ -21,8 +21,7 @@ export class MyUserService implements UserService<User, Credentials>{
     const foundUser = await this.userRepository.findOne({
       where: {
         email: credentials.email,
-        password: credentials.password,
-        active: credentials.active
+        password: credentials.password
       }
     })
 

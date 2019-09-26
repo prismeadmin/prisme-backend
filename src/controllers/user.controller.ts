@@ -7,7 +7,7 @@ import { inject } from '@loopback/core';
 import { sendEmail } from '../services/Mailer'
 import * as _ from 'lodash';
 import { BcryptHasher } from '../services/hash.password.bcrypt';
-import { CreadentialsRequestBody, ResponseType, VerifyRequestBody } from './specs/user.controller.specs'
+import { CreadentialsRequestBody, ResponseType } from './specs/user.controller.specs'
 import { MyUserService } from '../services/user-service'
 import { JWTService } from '../services/jwt-service';
 import { PasswordHasherBindings, UserServiceBindings, TokenServiceBindings } from '../keys';
@@ -62,13 +62,13 @@ export class UserController {
       throw new HttpErrors.Forbidden(`Email ${userData.email} already exists`);
     }
 
-    validateCredentials(_.pick(userData, ['email', 'password', 'active']));
+    validateCredentials(_.pick(userData, ['email', 'password']));
 
     // eslint-disable-next-line require-atomic-updates
     userData.password = await this.hasher.hashPassword(userData.password);
-    const secretToken = randomstring.generate();
-    userData.secretToken = secretToken
-    userData.active = false
+    /* const secretToken = randomstring.generate(); */
+    /* userData.secretToken = secretToken
+    userData.active = false */
     sendEmail(userData.email)
     const savedUser = await this.userRepository.create(userData);
     console.log(userData.email)
@@ -89,7 +89,7 @@ export class UserController {
     return Promise.resolve({ token })
   }
 
-  @post('/users/verify')
+  /* @post('/users/verify')
   async verify(
     @requestBody(VerifyRequestBody) userData: User
   ): Promise<User> {
@@ -111,7 +111,7 @@ export class UserController {
     } catch (err) {
       throw new HttpErrors.Forbidden(`Account has not been verified`);
     }
-  }
+  } */
 
 
   @get('/users/me')

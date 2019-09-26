@@ -1,66 +1,1099 @@
 [
   {
-    "name":"Business Analyst",
-    "skills":[
+    "name": "Business Analyst",
+    "category": "Analyze",
+    "skills": [
       {
-        "name":"Listener",
-        "id":"1"
+        "name": "Listener",
+        "id": "1"
       },
       {
-        "name":"Critical Thinking",
-        "id":"2"
+        "name": "Critical Thinking",
+        "id": "2"
       },
       {
-        "name":"Problem Solving",
-        "id":"3"
+        "name": "Problem Solving",
+        "id": "3"
       },
       {
-        "name":"Analytical",
-        "id":"4"
+        "name": "Analytical",
+        "id": "4"
       },
       {
-        "name":"Communication",
-        "id":"5"
+        "name": "Communication",
+        "id": "5"
       },
       {
-        "name":"Documentation",
-        "id":"6"
+        "name": "Documentation",
+        "id": "6"
       },
       {
-        "name":"Research",
-        "id":"7"
+        "name": "Research",
+        "id": "7"
       }
     ]
-  },{
-    "name":"QA Analyst",
-    "skills":[
+  },
+  {
+    "name": "QA Analyst",
+    "category": "Analyze",
+    "skills": [
       {
-        "name":"Listener",
-        "id":"1"
+        "name": "Listener",
+        "id": "1"
       },
       {
-        "name":"Critical Thinking",
-        "id":"2"
+        "name": "Critical Thinking",
+        "id": "2"
       },
       {
-        "name":"Problem Solving",
-        "id":"3"
+        "name": "Problem Solving",
+        "id": "3"
       },
       {
-        "name":"Analytical",
-        "id":"4"
+        "name": "Analytical",
+        "id": "4"
       },
       {
-        "name":"Communication",
-        "id":"5"
+        "name": "Communication",
+        "id": "5"
       },
       {
-        "name":"Documentation",
-        "id":"6"
+        "name": "Documentation",
+        "id": "6"
       },
       {
-        "name":"Research",
-        "id":"7"
+        "name": "Research",
+        "id": "7"
+      }
+    ]
+  },
+  {
+    "name": "Business Process Analyst",
+    "category": "Analyze",
+    "skills": [
+      {
+        "name": "Listener",
+        "id": "1"
+      },
+      {
+        "name": "Critical Thinking",
+        "id": "2"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      },
+      {
+        "name": "Analytical",
+        "id": "4"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      },
+      {
+        "name": "Documentation",
+        "id": "6"
+      },
+      {
+        "name": "Research",
+        "id": "7"
+      }
+    ]
+  },
+  {
+    "name": "IT Business Analyst",
+    "category": "Analyze",
+    "skills": [
+      {
+        "name": "Listener",
+        "id": "1"
+      },
+      {
+        "name": "Critical Thinking",
+        "id": "2"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      },
+      {
+        "name": "Analytical",
+        "id": "4"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      },
+      {
+        "name": "Documentation",
+        "id": "6"
+      },
+      {
+        "name": "Research",
+        "id": "7"
+      }
+    ]
+  },
+  {
+    "name": "Data Analyst",
+    "category": "Analyze",
+    "skills": [
+      {
+        "name": "Listener",
+        "id": "1"
+      },
+      {
+        "name": "Critical Thinking",
+        "id": "2"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      },
+      {
+        "name": "Analytical",
+        "id": "4"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      },
+      {
+        "name": "Documentation",
+        "id": "6"
+      },
+      {
+        "name": "Research",
+        "id": "7"
+      }
+    ]
+  },
+  {
+    "name": "Business Intelligence Analyst",
+    "category": "Analyze",
+    "skills": [
+      {
+        "name": "Listener",
+        "id": "1"
+      },
+      {
+        "name": "Critical Thinking",
+        "id": "2"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      },
+      {
+        "name": "Analytical",
+        "id": "4"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      },
+      {
+        "name": "Documentation",
+        "id": "6"
+      },
+      {
+        "name": "Research",
+        "id": "7"
+      }
+    ]
+  },
+  {
+    "name": "Data Scientist",
+    "category": "Analyze",
+    "skills": [
+      {
+        "name": "Listener",
+        "id": "1"
+      },
+      {
+        "name": "Critical Thinking",
+        "id": "2"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      },
+      {
+        "name": "Analytical",
+        "id": "4"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      },
+      {
+        "name": "Documentation",
+        "id": "6"
+      },
+      {
+        "name": "Research",
+        "id": "7"
+      }
+    ]
+  },
+  {
+    "name": "IT Director",
+    "category": "Management",
+    "skills": [
+      {
+        "name": "Team Management",
+        "id": "8"
+      },
+      {
+        "name": "Mentorship",
+        "id": "9"
+      },
+      {
+        "name": "Decision Making",
+        "id": "10"
+      },
+      {
+        "name": "Strategic Thinking",
+        "id": "11"
+      },
+      {
+        "name": "Negotiating",
+        "id": "12"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      },
+      {
+        "name": "Financials",
+        "id": "13"
+      }
+    ]
+  },
+  {
+    "name": "Technical Manager",
+    "category": "Management",
+    "skills": [
+      {
+        "name": "Team Management",
+        "id": "8"
+      },
+      {
+        "name": "Mentorship",
+        "id": "9"
+      },
+      {
+        "name": "Decision Making",
+        "id": "10"
+      },
+      {
+        "name": "Strategic Thinking",
+        "id": "11"
+      },
+      {
+        "name": "Negotiating",
+        "id": "12"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      },
+      {
+        "name": "Financials",
+        "id": "13"
+      }
+    ]
+  },
+  {
+    "name": "Chief Information Officer",
+    "category": "Management",
+    "skills": [
+      {
+        "name": "Team Management",
+        "id": "8"
+      },
+      {
+        "name": "Mentorship",
+        "id": "9"
+      },
+      {
+        "name": "Decision Making",
+        "id": "10"
+      },
+      {
+        "name": "Strategic Thinking",
+        "id": "11"
+      },
+      {
+        "name": "Negotiating",
+        "id": "12"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      },
+      {
+        "name": "Financials",
+        "id": "13"
+      }
+    ]
+  },
+  {
+    "name": "Chief Technology Officer",
+    "category": "Management",
+    "skills": [
+      {
+        "name": "Team Management",
+        "id": "8"
+      },
+      {
+        "name": "Mentorship",
+        "id": "9"
+      },
+      {
+        "name": "Decision Making",
+        "id": "10"
+      },
+      {
+        "name": "Strategic Thinking",
+        "id": "11"
+      },
+      {
+        "name": "Negotiating",
+        "id": "12"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      },
+      {
+        "name": "Financials",
+        "id": "13"
+      }
+    ]
+  },
+  {
+    "name": "VP of Technology",
+    "category": "Management",
+    "skills": [
+      {
+        "name": "Team Management",
+        "id": "8"
+      },
+      {
+        "name": "Mentorship",
+        "id": "9"
+      },
+      {
+        "name": "Decision Making",
+        "id": "10"
+      },
+      {
+        "name": "Strategic Thinking",
+        "id": "11"
+      },
+      {
+        "name": "Negotiating",
+        "id": "12"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      },
+      {
+        "name": "Financials",
+        "id": "13"
+      }
+    ]
+  },
+  {
+    "name": "Cloud Architect",
+    "category": "Architect",
+    "skills": [
+      {
+        "name": "Creative",
+        "id": "14"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      },
+      {
+        "name": "Analytical",
+        "id": "4"
+      },
+      {
+        "name": "Collaboration",
+        "id": "15"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      },
+      {
+        "name": "Client Relations",
+        "id": "16"
+      },
+      {
+        "name": "Manage Expectations",
+        "id": "17"
+      }
+    ]
+  },
+  {
+    "name": "Technical Consultant",
+    "category": "Architect",
+    "skills": [
+      {
+        "name": "Creative",
+        "id": "14"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      },
+      {
+        "name": "Analytical",
+        "id": "4"
+      },
+      {
+        "name": "Collaboration",
+        "id": "15"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      },
+      {
+        "name": "Client Relations",
+        "id": "16"
+      },
+      {
+        "name": "Manage Expectations",
+        "id": "17"
+      }
+    ]
+  },
+  {
+    "name": "Solutions Architect",
+    "category": "Architect",
+    "skills": [
+      {
+        "name": "Creative",
+        "id": "14"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      },
+      {
+        "name": "Analytical",
+        "id": "4"
+      },
+      {
+        "name": "Collaboration",
+        "id": "15"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      },
+      {
+        "name": "Client Relations",
+        "id": "16"
+      },
+      {
+        "name": "Manage Expectations",
+        "id": "17"
+      }
+    ]
+  },
+  {
+    "name": "IT DataBase Administrator",
+    "category": "Administration",
+    "skills": [
+      {
+        "name": "Patience",
+        "id": "18"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      },
+      {
+        "name": "Teamwork",
+        "id": "19"
+      },
+      {
+        "name": "Initiative",
+        "id": "20"
+      },
+      {
+        "name": "Attention to detail",
+        "id": "21"
+      }
+    ]
+  },
+  {
+    "name": "Network Administrator",
+    "category": "Administration",
+    "skills": [
+      {
+        "name": "Patience",
+        "id": "18"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      },
+      {
+        "name": "Teamwork",
+        "id": "19"
+      },
+      {
+        "name": "Initiative",
+        "id": "20"
+      },
+      {
+        "name": "Attention to detail",
+        "id": "21"
+      }
+    ]
+  },
+  {
+    "name": "System Administrator",
+    "category": "Administration",
+    "skills": [
+      {
+        "name": "Patience",
+        "id": "18"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      },
+      {
+        "name": "Teamwork",
+        "id": "19"
+      },
+      {
+        "name": "Initiative",
+        "id": "20"
+      },
+      {
+        "name": "Attention to detail",
+        "id": "21"
+      }
+    ]
+  },
+  {
+    "name": "Customer Success Manager",
+    "category": "Support",
+    "skills": [
+      {
+        "name": "Customer Service",
+        "id": "22"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      },
+      {
+        "name": "Flexibility",
+        "id": "23"
+      },
+      {
+        "name": "Active Listening",
+        "id": "24"
+      },
+      {
+        "name": "Commitment",
+        "id": "25"
+      },
+      {
+        "name": "Troubleshooting",
+        "id": "26"
+      }
+    ]
+  },
+  {
+    "name": "Help Desk Specialist",
+    "category": "Support",
+    "skills": [
+      {
+        "name": "Customer Service",
+        "id": "22"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      },
+      {
+        "name": "Flexibility",
+        "id": "23"
+      },
+      {
+        "name": "Active Listening",
+        "id": "24"
+      },
+      {
+        "name": "Commitment",
+        "id": "25"
+      },
+      {
+        "name": "Troubleshooting",
+        "id": "26"
+      }
+    ]
+  },
+  {
+    "name": "Help Desk Technician",
+    "category": "Support",
+    "skills": [
+      {
+        "name": "Customer Service",
+        "id": "22"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      },
+      {
+        "name": "Flexibility",
+        "id": "23"
+      },
+      {
+        "name": "Active Listening",
+        "id": "24"
+      },
+      {
+        "name": "Commitment",
+        "id": "25"
+      },
+      {
+        "name": "Troubleshooting",
+        "id": "26"
+      }
+    ]
+  },
+  {
+    "name": "IT Support Specialist",
+    "category": "Support",
+    "skills": [
+      {
+        "name": "Customer Service",
+        "id": "22"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      },
+      {
+        "name": "Flexibility",
+        "id": "23"
+      },
+      {
+        "name": "Active Listening",
+        "id": "24"
+      },
+      {
+        "name": "Commitment",
+        "id": "25"
+      },
+      {
+        "name": "Troubleshooting",
+        "id": "26"
+      }
+    ]
+  },
+  {
+    "name": "Product Manager",
+    "category": "Product",
+    "skills": [
+      {
+        "name": "Analytical",
+        "id": "4"
+      },
+      {
+        "name": "Active Listening",
+        "id": "24"
+      },
+      {
+        "name": "Collaboration",
+        "id": "15"
+      },
+      {
+        "name": "Negotiating",
+        "id": "12"
+      },
+      {
+        "name": "Teamwork",
+        "id": "19"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      }
+    ]
+  },
+  {
+    "name": "Product Owner",
+    "category": "Product",
+    "skills": [
+      {
+        "name": "Analytical",
+        "id": "4"
+      },
+      {
+        "name": "Active Listening",
+        "id": "24"
+      },
+      {
+        "name": "Collaboration",
+        "id": "15"
+      },
+      {
+        "name": "Negotiating",
+        "id": "12"
+      },
+      {
+        "name": "Teamwork",
+        "id": "19"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      }
+    ]
+  },
+  {
+    "name": "Product Marketing Manager",
+    "category": "Product",
+    "skills": [
+      {
+        "name": "Analytical",
+        "id": "4"
+      },
+      {
+        "name": "Active Listening",
+        "id": "24"
+      },
+      {
+        "name": "Collaboration",
+        "id": "15"
+      },
+      {
+        "name": "Negotiating",
+        "id": "12"
+      },
+      {
+        "name": "Teamwork",
+        "id": "19"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      }
+    ]
+  },
+  {
+    "name": "Chief Product Officer",
+    "category": "Product",
+    "skills": [
+      {
+        "name": "Analytical",
+        "id": "4"
+      },
+      {
+        "name": "Active Listening",
+        "id": "24"
+      },
+      {
+        "name": "Collaboration",
+        "id": "15"
+      },
+      {
+        "name": "Negotiating",
+        "id": "12"
+      },
+      {
+        "name": "Teamwork",
+        "id": "19"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      }
+    ]
+  },
+  {
+    "name": "Group Product Manager",
+    "category": "Product",
+    "skills": [
+      {
+        "name": "Analytical",
+        "id": "4"
+      },
+      {
+        "name": "Active Listening",
+        "id": "24"
+      },
+      {
+        "name": "Collaboration",
+        "id": "15"
+      },
+      {
+        "name": "Negotiating",
+        "id": "12"
+      },
+      {
+        "name": "Teamwork",
+        "id": "19"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      }
+    ]
+  },
+  {
+    "name": "Software Developer",
+    "category": "Development",
+    "skills": [
+      {
+        "name": "Detail Oriented",
+        "id": "27"
+      },
+      {
+        "name": "Analytical",
+        "id": "4"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      },
+      {
+        "name": "Patience",
+        "id": "18"
+      },
+      {
+        "name": "Teamwork",
+        "id": "19"
+      },
+      {
+        "name": "Accountability",
+        "id": "28"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      }
+    ]
+  },
+  {
+    "name": "Full Stack Developer",
+    "category": "Development",
+    "skills": [
+      {
+        "name": "Detail Oriented",
+        "id": "27"
+      },
+      {
+        "name": "Analytical",
+        "id": "4"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      },
+      {
+        "name": "Patience",
+        "id": "18"
+      },
+      {
+        "name": "Teamwork",
+        "id": "19"
+      },
+      {
+        "name": "Accountability",
+        "id": "28"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      }
+    ]
+  },
+  {
+    "name": "Engineer",
+    "category": "Development",
+    "skills": [
+      {
+        "name": "Detail Oriented",
+        "id": "27"
+      },
+      {
+        "name": "Analytical",
+        "id": "4"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      },
+      {
+        "name": "Patience",
+        "id": "18"
+      },
+      {
+        "name": "Teamwork",
+        "id": "19"
+      },
+      {
+        "name": "Accountability",
+        "id": "28"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      }
+    ]
+  },
+  {
+    "name": "Backend Developer",
+    "category": "Development",
+    "skills": [
+      {
+        "name": "Detail Oriented",
+        "id": "27"
+      },
+      {
+        "name": "Analytical",
+        "id": "4"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      },
+      {
+        "name": "Patience",
+        "id": "18"
+      },
+      {
+        "name": "Teamwork",
+        "id": "19"
+      },
+      {
+        "name": "Accountability",
+        "id": "28"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      }
+    ]
+  },
+  {
+    "name": "Frontend Developer",
+    "category": "Development",
+    "skills": [
+      {
+        "name": "Detail Oriented",
+        "id": "27"
+      },
+      {
+        "name": "Analytical",
+        "id": "4"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      },
+      {
+        "name": "Patience",
+        "id": "18"
+      },
+      {
+        "name": "Teamwork",
+        "id": "19"
+      },
+      {
+        "name": "Accountability",
+        "id": "28"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
+      }
+    ]
+  },
+  {
+    "name": "Programmer",
+    "category": "Development",
+    "skills": [
+      {
+        "name": "Detail Oriented",
+        "id": "27"
+      },
+      {
+        "name": "Analytical",
+        "id": "4"
+      },
+      {
+        "name": "Problem Solving",
+        "id": "3"
+      },
+      {
+        "name": "Patience",
+        "id": "18"
+      },
+      {
+        "name": "Teamwork",
+        "id": "19"
+      },
+      {
+        "name": "Accountability",
+        "id": "28"
+      },
+      {
+        "name": "Communication",
+        "id": "5"
       }
     ]
   }
