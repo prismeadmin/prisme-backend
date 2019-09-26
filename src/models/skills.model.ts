@@ -1,20 +1,20 @@
 import { Entity, model, property } from '@loopback/repository';
 
 /**
- * Item in a shopping cart
+ * Item in a skill array
  */
 @model()
 export class Skills extends Entity {
   /**
    * Skill id
    */
-  @property({ id: true })
+  @property({ id: true, required: false })
   skillId: string;
 
   /**
    * Name
    */
-  @property()
+  @property({ required: true })
   name: string;
 
   constructor(data?: Partial<Skills>) {

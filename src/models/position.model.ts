@@ -6,6 +6,8 @@ export class Position extends Entity {
   @property({
     type: 'string',
     id: true,
+    required: false,
+    generated: true,
   })
   id: string;
 
@@ -13,7 +15,13 @@ export class Position extends Entity {
     type: 'string',
     required: true,
   })
-  position: string;
+  name: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  category: string;
 
   @property.array(Skills, { required: true })
   skills: Skills[];
