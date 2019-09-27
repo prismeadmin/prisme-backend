@@ -20,12 +20,9 @@ export class MyUserService implements UserService<User, Credentials>{
   async verifyCredentials(credentials: Credentials): Promise<User> {
     const foundUser = await this.userRepository.findOne({
       where: {
-        email: credentials.email,
-        password: credentials.password
+        email: credentials.email
       }
     })
-
-
 
     if (!foundUser) {
       throw new HttpErrors.NotFound(`user not found with this email: ${credentials.email}`)
@@ -36,9 +33,7 @@ export class MyUserService implements UserService<User, Credentials>{
     if (!passwordMatched) {
       throw new HttpErrors.Unauthorized('password is not valid')
     }
-
     return foundUser
-
   }
 
   convertToUserProfile(user: User): UserProfile {
@@ -51,6 +46,4 @@ export class MyUserService implements UserService<User, Credentials>{
         : `${user.lastName}`;
     return { [securityId]: user.id, name: userName };
   }
-
-
 }

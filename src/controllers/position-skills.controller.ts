@@ -16,8 +16,8 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import { Position } from '../models';
-import { PositionRepository } from '../repositories';
+import { Position } from '../models/';
+import { PositionRepository } from '../repositories/';
 
 export class PostionControllerController {
   constructor(

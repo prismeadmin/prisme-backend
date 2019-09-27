@@ -13,7 +13,7 @@ export const CredentialsSchema = {
   }
 }
 
-/* export const verifySchema = {
+export const verifySchema = {
   type: 'object',
   required: ['secretToken'],
   properties: {
@@ -29,7 +29,7 @@ export const VerifyRequestBody = {
   content: {
     'application/json': { schema: verifySchema }
   }
-} */
+}
 
 export const CreadentialsRequestBody = {
   description: 'The input of login function',
