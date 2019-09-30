@@ -9,7 +9,7 @@ export class Skill extends Entity {
    * Skill id
    */
   @property({ id: true, required: false })
-  skillId: string;
+  id: string;
 
   /**
    * Name
