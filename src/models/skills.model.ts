@@ -4,7 +4,7 @@ import { Entity, model, property } from '@loopback/repository';
  * Item in a skill array
  */
 @model()
-export class Skills extends Entity {
+export class Skill extends Entity {
   /**
    * Skill id
    */
@@ -17,7 +17,7 @@ export class Skills extends Entity {
   @property({ required: true })
   name: string;
 
-  constructor(data?: Partial<Skills>) {
+  constructor(data?: Partial<Skill>) {
     super(data);
   }
 }

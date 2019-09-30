@@ -1,5 +1,5 @@
 import { Entity, model, property } from '@loopback/repository';
-import { Skills } from './skills.model';
+import { Skill } from './skills.model';
 
 @model({ settings: {} })
 export class Position extends Entity {
@@ -23,8 +23,8 @@ export class Position extends Entity {
   })
   category: string;
 
-  @property.array(Skills, { required: true })
-  skills: Skills[];
+  @property.array(Skill, { required: true })
+  skills: Skill[];
 
 
 
