@@ -1,3 +1,4 @@
 export * from './todo.repository';
 export * from './user.repository';
-export * from './positions.skills.repository';
+export * from './position.repository'
+export * from './skill.repository'

@@ -1,16 +1,16 @@
 import { DefaultCrudRepository } from '@loopback/repository';
-import { Position, PositionRelations } from '../models';
+import { Skill, SkillRelations } from '../models';
 import { MongoDsDataSource } from '../datasources';
 import { inject } from '@loopback/core';
 
-export class PositionRepository extends DefaultCrudRepository<
-  Position,
-  typeof Position.prototype.id,
-  PositionRelations
+export class SkillRepository extends DefaultCrudRepository<
+  Skill,
+  typeof Skill.prototype.id,
+  SkillRelations
   > {
   constructor(
     @inject('datasources.mongoDS') dataSource: MongoDsDataSource,
   ) {
-    super(Position, dataSource);
+    super(Skill, dataSource);
   }
 }

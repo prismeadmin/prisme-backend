@@ -16,8 +16,8 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import { Position } from '../models/';
-import { PositionRepository } from '../repositories/';
+import { Position } from '../models';
+import { PositionRepository } from '../repositories';
 
 export class PostionControllerController {
   constructor(
@@ -69,6 +69,18 @@ export class PostionControllerController {
   async findById(@param.path.string('id') id: string): Promise<Position> {
     return this.positionRepository.findById(id);
   }
+
+  /* @get('/postion/skill/{id}', {
+    responses: {
+      '200': {
+        description: 'Position model instance',
+        content: { 'application/json': { schema: getModelSchemaRef(Position) } },
+      },
+    },
+  })
+  async findById(@param.path.string('id') id: string): Promise<Position> {
+
+  } */
 
 
 

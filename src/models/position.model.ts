@@ -1,5 +1,5 @@
-import { Entity, model, property } from '@loopback/repository';
-import { Skill } from './skills.model';
+import { Entity, model, property, hasMany } from '@loopback/repository';
+import { Skill } from './skill.model';
 
 @model({ settings: {} })
 export class Position extends Entity {
@@ -25,6 +25,9 @@ export class Position extends Entity {
 
   @property.array(Skill, { required: true })
   skills: Skill[];
+
+  /* @hasMany(() => Skill)
+  skills: Skill[]; */
 
 
 

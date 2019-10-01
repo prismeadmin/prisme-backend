@@ -17,7 +17,16 @@ export class Skill extends Entity {
   @property({ required: true })
   name: string;
 
+  @property({ required: true })
+  positions: string;
+
   constructor(data?: Partial<Skill>) {
     super(data);
   }
 }
+
+export interface SkillRelations {
+  // describe navigational properties here
+}
+
+export type SkillWithRelations = Skill & SkillRelations;

@@ -1,0 +1,364 @@
+[
+  {
+    "name": "Listener",
+    "id": "1",
+    "positions": [
+      "Business Analyst",
+      "QA Analyst",
+      "Business Process Analyst",
+      "IT Business Analyst",
+      "Data Analyst",
+      "Business Intelligence Analyst",
+      "Data Scientist"
+    ]
+  },
+  {
+    "name": "Critical Thinking",
+    "id": "2",
+    "positions": [
+      "Business Analyst",
+      "QA Analyst",
+      "Business Process Analyst",
+      "IT Business Analyst",
+      "Data Analyst",
+      "Business Intelligence Analyst",
+      "Data Scientist"
+    ]
+  },
+  {
+    "name": "Problem Solving",
+    "id": "3",
+    "positions": [
+      "Business Analyst",
+      "QA Analyst",
+      "Business Process Analyst",
+      "IT Business Analyst",
+      "Data Analyst",
+      "Business Intelligence Analyst",
+      "Data Scientist",
+      "Cloud Architect",
+      "Technical Consultant",
+      "Solution Architect"
+    ]
+  },
+  {
+    "name": "Analytical",
+    "id": "4",
+    "positions": [
+      "Business Analyst",
+      "QA Analyst",
+      "Business Process Analyst",
+      "IT Business Analyst",
+      "Data Analyst",
+      "Business Intelligence Analyst",
+      "Data Scientist",
+      "Cloud Architect",
+      "Technical Consultant",
+      "Solution Architect"
+    ]
+  },
+  {
+    "name": "Communication",
+    "id": "5",
+    "positions": [
+      "Business Analyst",
+      "QA Analyst",
+      "Business Process Analyst",
+      "IT Business Analyst",
+      "Data Analyst",
+      "Business Intelligence Analyst",
+      "Data Scientist",
+      "IT Director",
+      "Technical Management",
+      "Chief Information Officer",
+      "Chief Technology Officer",
+      "VP of Technology",
+      "Customer Success Manager",
+      "Help Desk Technician",
+      "Help Desk Specialist",
+      "Customer Suppoer Specialist",
+      "IT Support Specialist",
+      "Product Manager",
+      "Product Owner",
+      "Product Marketing Manager",
+      "Chief Product Officer",
+      "Group Product Manager",
+      "Software Developer",
+      "Full Stack Developer",
+      "Engineer",
+      "Backend Developer",
+      "Frontend Developer",
+      "Programmer"
+    ]
+  },
+  {
+    "name": "Documentation",
+    "id": "6",
+    "positions": [
+      "Business Analyst",
+      "QA Analyst",
+      "Business Process Analyst",
+      "IT Business Analyst",
+      "Data Analyst",
+      "Business Intelligence Analyst",
+      "Data Scientist"
+    ]
+  },
+  {
+    "name": "Research",
+    "id": "7",
+    "positions": [
+      "Business Analyst",
+      "QA Analyst",
+      "Business Process Analyst",
+      "IT Business Analyst",
+      "Data Analyst",
+      "Business Intelligence Analyst",
+      "Data Scientist"
+    ]
+  },
+  {
+    "name": "Team Management",
+    "id": "8",
+    "positions": [
+      "IT Director",
+      "Technical Management",
+      "Chief Information Officer",
+      "Chief Technology Officer",
+      "VP of Technology"
+    ]
+  },
+  {
+    "name": "Mentorship",
+    "id": "9",
+    "positions": [
+      "IT Director",
+      "Technical Management",
+      "Chief Information Officer",
+      "Chief Technology Officer",
+      "VP of Technology"
+    ]
+  },
+  {
+    "name": "Decision Making",
+    "id": "10",
+    "positions": [
+      "IT Director",
+      "Technical Management",
+      "Chief Information Officer",
+      "Chief Technology Officer",
+      "VP of Technology"
+    ]
+  },
+  {
+    "name": "Strategic Thinking",
+    "id": "11",
+    "positions": [
+      "IT Director",
+      "Technical Management",
+      "Chief Information Officer",
+      "Chief Technology Officer",
+      "VP of Technology"
+    ]
+  },
+  {
+    "name": "Negotiating",
+    "id": "12",
+    "positions": [
+      "IT Director",
+      "Technical Management",
+      "Chief Information Officer",
+      "Chief Technology Officer",
+      "VP of Technology"
+    ]
+  },
+  {
+    "name": "Financials",
+    "id": "13",
+    "positions": [
+      "IT Director",
+      "Technical Management",
+      "Chief Information Officer",
+      "Chief Technology Officer",
+      "VP of Technology"
+    ]
+  },
+  {
+    "name": "Creative",
+    "id": "14",
+    "positions": [
+      "Cloud Architect",
+      "Technical Consultant",
+      "Solution Architect"
+    ]
+  },
+  {
+    "name": "Collaboration",
+    "id": "15",
+    "positions": [
+      "Cloud Architect",
+      "Technical Consultant",
+      "Solution Architect",
+      "Product Manager",
+      "Product Owner",
+      "Product Marketing Manager",
+      "Chief Product Officer",
+      "Group Product Manager"
+    ]
+  },
+  {
+    "name": "Client Relations",
+    "id": "16",
+    "positions": [
+      "Cloud Architect",
+      "Technical Consultant",
+      "Solution Architect"
+    ]
+  },
+  {
+    "name": "Manage Expectation",
+    "id": "17",
+    "positions": [
+      "Cloud Architect",
+      "Technical Consultant",
+      "Solution Architect"
+    ]
+  },
+  {
+    "name": "Patience",
+    "id": "18",
+    "positions": [
+      "IT Database Administrator",
+      "Network Administrator",
+      "System Administrator",
+      "Software Developer",
+      "Full Stack Developer",
+      "Engineer",
+      "Backend Developer",
+      "Frontend Developer",
+      "Programmer"
+    ]
+  },
+  {
+    "name": "Team Work",
+    "id": "19",
+    "positions": [
+      "IT Database Administrator",
+      "Network Administrator",
+      "System Administrator",
+      "Product Manager",
+      "Product Owner",
+      "Product Marketing Manager",
+      "Chief Product Officer",
+      "Group Product Manager",
+      "Software Developer",
+      "Full Stack Developer",
+      "Engineer",
+      "Backend Developer",
+      "Frontend Developer",
+      "Programmer"
+    ]
+  },
+  {
+    "name": "Initiative",
+    "id": "20",
+    "positions": [
+      "Cloud Architect",
+      "Technical Consultant",
+      "Solution Architect"
+    ]
+  },
+  {
+    "name": "Attention to detail",
+    "id": "21",
+    "positions": [
+      "Cloud Architect",
+      "Technical Consultant",
+      "Solution Architect"
+    ]
+  },
+  {
+    "name": "Customer Service",
+    "id": "22",
+    "positions": [
+      "Customer Success Manager",
+      "Help Desk Technician",
+      "Help Desk Specialist",
+      "Customer Suppoer Specialist",
+      "IT Support Specialist"
+    ]
+  },
+  {
+    "name": "Flexibility",
+    "id": "23",
+    "positions": [
+      "Customer Success Manager",
+      "Help Desk Technician",
+      "Help Desk Specialist",
+      "Customer Suppoer Specialist",
+      "IT Support Specialist"
+    ]
+  },
+  {
+    "name": "Active Listening",
+    "id": "24",
+    "positions": [
+      "Customer Success Manager",
+      "Help Desk Technician",
+      "Help Desk Specialist",
+      "Customer Suppoer Specialist",
+      "IT Support Specialist",
+      "Product Manager",
+      "Product Owner",
+      "Product Marketing Manager",
+      "Chief Product Officer",
+      "Group Product Manager"
+    ]
+  },
+  {
+    "name": "Commitment",
+    "id": "25",
+    "positions": [
+      "Customer Success Manager",
+      "Help Desk Technician",
+      "Help Desk Specialist",
+      "Customer Suppoer Specialist",
+      "IT Support Specialist"
+    ]
+  },
+  {
+    "name": "Troubleshooting",
+    "id": "26",
+    "positions": [
+      "Customer Success Manager",
+      "Help Desk Technician",
+      "Help Desk Specialist",
+      "Customer Suppoer Specialist",
+      "IT Support Specialist"
+    ]
+  },
+  {
+    "name": "Detail Oriented",
+    "id": "27",
+    "positions": [
+      "Software Developer",
+      "Full Stack Developer",
+      "Engineer",
+      "Backend Developer",
+      "Frontend Developer",
+      "Programmer"
+    ]
+  },
+  {
+    "name": "Accountability",
+    "id": "28",
+    "positions": [
+      "Software Developer",
+      "Full Stack Developer",
+      "Engineer",
+      "Backend Developer",
+      "Frontend Developer",
+      "Programmer"
+    ]
+  }
+]
