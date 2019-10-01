@@ -10,11 +10,7 @@ import {
   get,
   getFilterSchemaFor,
   getModelSchemaRef,
-  getWhereSchemaFor,
-  patch,
-  put,
-  del,
-  requestBody,
+  getWhereSchemaFor
 } from '@loopback/rest';
 import { Position } from '../models';
 import { PositionRepository } from '../repositories';

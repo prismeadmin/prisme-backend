@@ -6,17 +6,13 @@ import {
   Where,
 } from '@loopback/repository';
 import {
-  post,
   param,
   get,
   getFilterSchemaFor,
   getModelSchemaRef,
-  getWhereSchemaFor,
-  patch,
-  put,
-  del,
-  requestBody,
+  getWhereSchemaFor
 } from '@loopback/rest';
+
 import { Skill } from '../models';
 import { SkillRepository } from '../repositories';
 

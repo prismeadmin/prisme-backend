@@ -1,6 +1,7 @@
 import * as isEmail from 'isemail';
-import {Credentials} from '../repositories/user.repository';
-import {HttpErrors} from '@loopback/rest';
+import { Credentials } from '../repositories/user.repository';
+import { WaitlistCredentials } from '../repositories/waitlist.repository';
+import { HttpErrors } from '@loopback/rest';
 
 export function validateCredentials(creadentials: Credentials) {
   if (!isEmail.validate(creadentials.email)) {
@@ -11,5 +12,11 @@ export function validateCredentials(creadentials: Credentials) {
     throw new HttpErrors.UnprocessableEntity(
       'password length should be at least 8 characters',
     );
+  }
+}
+
+export function validateCredentialsWaitlist(creadentials: WaitlistCredentials) {
+  if (!isEmail.validate(creadentials.email)) {
+    throw new HttpErrors.UnprocessableEntity('invalid email');
   }
 }
