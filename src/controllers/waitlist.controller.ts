@@ -48,8 +48,8 @@ export class WaitlistControllerController {
       throw new HttpErrors.Forbidden(`Email ${waitlist.email} already exists`);
     }
 
+    validateCredentialsWaitlist(_.pick(waitlist, ['email']));
     await keepSubscribers(waitlist.email)
-    validateCredentialsWaitlist(_.pick(waitlist, ['email', 'firstName', 'secondName']));
     return this.waitlistRepository.create(waitlist);
   }
 }

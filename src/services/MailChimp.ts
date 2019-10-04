@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-export async function keepSubscribers(email: string) {
+export function keepSubscribers(email: string) {
   const data = {
     members: [
       {
@@ -21,18 +21,13 @@ export async function keepSubscribers(email: string) {
     data: postData
   }
 
-  return new Promise((resolve, reject) => {
-    axios(options, async (error: string, response: { statusCode: number }) => {
-      try {
-        if (response.statusCode === 200) {
-          return resolve(true)
-        } else {
-          return error
-        }
-      } catch (err) {
-        reject(err)
-      }
-    })
+
+  axios(options).then(function (response: object) {
+    console.log(response);
   })
+    .catch(function (error: object) {
+      console.log(error);
+    });
+
 }
 

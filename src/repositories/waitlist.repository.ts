@@ -4,9 +4,7 @@ import { MongoDsDataSource } from '../datasources';
 import { inject } from '@loopback/core';
 
 export type WaitlistCredentials = {
-  email: string,
-  firstName: string,
-  secondName: string
+  email: string
 }
 
 export class WaitlistRepository extends DefaultCrudRepository<
