@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/camelcase */
 import {
   repository
 } from '@loopback/repository';
@@ -11,6 +12,8 @@ import { Waitlist } from '../models';
 import { WaitlistRepository } from '../repositories';
 import { validateCredentialsWaitlist } from '../services/validator';
 import _ = require('lodash');
+//const app = require('loopback-component-mailchimp')
+import { keepSubscribers } from '../services/MailChimp'
 
 export class WaitlistControllerController {
   constructor(
@@ -45,7 +48,8 @@ export class WaitlistControllerController {
       throw new HttpErrors.Forbidden(`Email ${waitlist.email} already exists`);
     }
 
-    validateCredentialsWaitlist(_.pick(waitlist, ['email']));
+    await keepSubscribers(waitlist.email)
+    validateCredentialsWaitlist(_.pick(waitlist, ['email', 'firstName', 'secondName']));
     return this.waitlistRepository.create(waitlist);
   }
 }

@@ -17,6 +17,18 @@ export class Waitlist extends Entity {
   })
   email: string;
 
+  @property({
+    type: 'string',
+    required: true,
+  })
+  firstName: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  secondName: string;
+
   constructor(data?: Partial<Waitlist>) {
     super(data);
   }

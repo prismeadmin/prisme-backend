@@ -1,0 +1,10 @@
+{
+  "loopback-component-mailchimp": {
+    "apiKey": "auth 71634e399a09a918610fd25094e6731c-us20",
+    "defaultListId": "b0404295b1",
+    "updateIfExists": true,
+    "defaults": {
+      "double_optin": true
+    }
+  }
+}
