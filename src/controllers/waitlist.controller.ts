@@ -49,7 +49,7 @@ export class WaitlistControllerController {
     }
 
     validateCredentialsWaitlist(_.pick(waitlist, ['email']));
-    await keepSubscribers(waitlist.email)
+    keepSubscribers(waitlist.email)
     return this.waitlistRepository.create(waitlist);
   }
 }
