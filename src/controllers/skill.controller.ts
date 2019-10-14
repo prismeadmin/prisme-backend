@@ -33,7 +33,7 @@ export class StudentController {
   async count(
     @param.query.object('where', getWhereSchemaFor(Skill)) where?: Where<Skill>,
   ): Promise<Count> {
-    return await this.skillRepository.count(where);
+    return this.skillRepository.count(where);
   }
 
   @get('/skills', {
@@ -51,7 +51,7 @@ export class StudentController {
   async find(
     @param.query.object('filter', getFilterSchemaFor(Skill)) filter?: Filter<Skill>,
   ): Promise<Skill[]> {
-    return await this.skillRepository.find(filter);
+    return this.skillRepository.find(filter);
   }
 
   @get('/skills/{id}', {

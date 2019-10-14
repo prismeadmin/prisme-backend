@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Create a website for Toyota",
+    "tasks": [
+      {
+        "name": "Find appropriate tools"
+      },
+      {
+        "name": "Build prototype"
+      },
+      {
+        "name": "Build back end"
+      }
+    ]
+  },
+  {
+    "title": "Integrate ML into project",
+    "tasks": [
+      {
+        "name": "Find ML developer"
+      },
+      {
+        "name": "Decide on tools"
+      },
+      {
+        "name": "Build prototype"
+      }
+    ]
+  }
+]

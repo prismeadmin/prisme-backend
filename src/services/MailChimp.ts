@@ -28,6 +28,5 @@ export function keepSubscribers(email: string) {
     .catch(function (error: object) {
       console.log(error);
     });
-
 }
 

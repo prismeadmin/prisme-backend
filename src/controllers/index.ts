@@ -4,3 +4,5 @@ export * from './position.controller';
 export * from './skill.controller';
 export * from './skill-position.controller'
 export * from './waitlist.controller'
+export * from './goal.task.controller'
+
