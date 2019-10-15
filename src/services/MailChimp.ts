@@ -13,10 +13,10 @@ export function keepSubscribers(email: string) {
   const postData = JSON.stringify(data)
 
   const options = {
-    url: 'https://us20.api.mailchimp.com/3.0/lists/b0404295b1',
+    url: 'https://us20.api.mailchimp.com/3.0/lists/3b14df5586',
     method: 'POST',
     headers: {
-      Authorization: 'auth 71634e399a09a918610fd25094e6731c-us20'
+      Authorization: 'auth 6c72d6ec0019e656b7d434b886767b27-us3'
     },
     data: postData
   }
