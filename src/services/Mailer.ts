@@ -1,6 +1,6 @@
 const mailgun = require("mailgun-js");
-const API_KEY = '46ec0aaa406db6bf193b5cf0e55fdc1c-baa55c84-e1160d64'
-const DOMAIN = 'sandbox9b27e8b5ffe348df99a564315758d0bd.mailgun.org';
+const API_KEY = 'e70a1e1c2b6ac04c9ee8ace22b5c6b00-dc5f81da-f68ac6ab';
+const DOMAIN = 'sandbox7b042ed37d9d4611a4a11ad41d905ec1.mailgun.org';
 const mg = mailgun({ apiKey: API_KEY, domain: DOMAIN });
 
 export const sendEmail = (email: String, secretToken: String) => {
