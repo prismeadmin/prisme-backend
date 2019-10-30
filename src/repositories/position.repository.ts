@@ -21,9 +21,9 @@ export class PositionRepository extends DefaultCrudRepository<Position,
     protected skillRepositoryGetter: Getter<SkillRepository>,
   ) {
     super(Position, dataSource);
-    this.skills = this.createHasManyRepositoryFactoryFor(
-      'skills',
-      skillRepositoryGetter,
-    );
+    // this.skills = this.createHasManyRepositoryFactoryFor(
+    //   'skills',
+    //   skillRepositoryGetter,
+    // );
   }
 }
