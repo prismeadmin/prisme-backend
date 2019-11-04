@@ -15,7 +15,7 @@ export class Goal extends Entity {
     type: 'string',
     required: true,
   })
-  title: string;
+  category: string;
 
   @property.array(Task)
   tasks: Task[];

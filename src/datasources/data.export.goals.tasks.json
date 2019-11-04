@@ -1,30 +1,108 @@
 [
   {
-    "title": "Create a website for Toyota",
+    "category": "Learn",
     "tasks": [
       {
-        "name": "Find appropriate tools"
+        "name": "Read an industry article"
       },
       {
-        "name": "Build prototype"
+        "name": "Study industry terms"
       },
       {
-        "name": "Build back end"
+        "name": "Research a targeted company"
+      },
+      {
+        "name": "Learn about a role model in your targeted industry/company"
+      },
+      {
+        "name": "Learn a new interview technique"
       }
     ]
   },
   {
-    "title": "Integrate ML into project",
+    "category": "Refine",
     "tasks": [
       {
-        "name": "Find ML developer"
+        "name": "Practice your \"tell me about yourself\""
       },
       {
-        "name": "Decide on tools"
+        "name": "Practice a tough interview question"
       },
       {
-        "name": "Build prototype"
+        "name": "Review and update your social media content "
+      },
+      {
+        "name": "Know your worth - refine your salary negotiations"
+      },
+      {
+        "name": "Refine your resume for targeted roles"
       }
     ]
+  },
+  {
+    "category": "Social",
+    "tasks": [
+      {
+        "name": "Find a mentor in your targeted industry "
+      },
+      {
+        "name": "Interview a professional with your targeted career role"
+      },
+      {
+        "name": "Attend a networking event"
+      },
+      {
+        "name": "Reach out to a friend for career advice"
+      },
+      {
+        "name": "Volunteer with an industry organization"
+      }
+    ]
+  },
+  {
+    "category": "Fun",
+    "tasks": [
+      {
+        "name": "Listen to a podcast "
+      },
+      {
+        "name": "Sing out loud to your favorite song"
+      },
+      {
+        "name": "Learn a new dance move"
+      },
+      {
+        "name": "Take a brisk walk "
+      },
+      {
+        "name": "Get crafty with your favorite craft"
+      }
+    ]
+  },
+  {
+    "category": "Action",
+    "tasks": [
+      {
+        "name": "Apply to a job"
+      },
+      {
+        "name": "Reach out to a friend for career advice"
+      },
+      {
+        "name": "Add a new accomplishment to a skill card"
+      },
+      {
+        "name": "Add a new a skill card "
+      },
+      {
+        "name": "Create a new connection with an industry leader"
+      }
+    ]
+  },
+  {
+    "category": "Wild Card",
+    "tasks": [
+    ]
   }
+
 ]
