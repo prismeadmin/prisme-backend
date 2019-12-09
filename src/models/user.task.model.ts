@@ -1,10 +1,13 @@
 import { Entity, model, property } from '@loopback/repository';
 
-@model({ settings: {} })
-export class User extends Entity {
+@model()
+export class UserTask extends Entity {
+
   @property({
     type: 'string',
     id: true,
+    required: false,
+    generated: true,
   })
   id: string;
 
@@ -12,49 +15,55 @@ export class User extends Entity {
     type: 'string',
     required: true,
   })
-  email: string;
+  category_id: string;
 
   @property({
     type: 'string',
     required: true,
   })
-  password: string;
+  user_id: string;
 
   @property({
     type: 'string',
     required: true,
   })
-  firstName: string;
+  task_type: string;
 
   @property({
     type: 'string',
     required: true,
   })
-  lastName: string;
+  task_id: string;
 
   @property({
     type: 'string',
-    required: false
-  })
-  secretToken: string;
-
-  @property({
-    type: 'boolean',
     required: false,
-    default: false
   })
-  active: boolean;
+  rate: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  status: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  days: string;
 
   @property.array(String)
   permissions: String[]
 
-  constructor(data?: Partial<User>) {
+
+  constructor(data?: Partial<UserTask>) {
     super(data);
   }
 }
 
-export interface UserRelations {
+export interface UserTaskRelations {
   // describe navigational properties here
 }
 
-export type UserWithRelations = User & UserRelations;
+export type UserTaskWithRelations = UserTask & UserTaskRelations;

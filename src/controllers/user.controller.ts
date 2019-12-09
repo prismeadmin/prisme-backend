@@ -1,8 +1,19 @@
-import { repository } from '@loopback/repository';
-import { UserRepository, Credentials } from '../repositories/';
-import { post, getJsonSchemaRef, requestBody, get, put, param, getModelSchemaRef, HttpErrors } from '@loopback/rest';
+import { repository, Filter } from '@loopback/repository';
+import { UserRepository, Credentials, UserTaskRepository } from '../repositories/';
+import {
+  post,
+  patch,
+  getJsonSchemaRef,
+  requestBody,
+  get,
+  put,
+  param,
+  getModelSchemaRef,
+  getFilterSchemaFor,
+  HttpErrors
+} from '@loopback/rest';
 import { validateCredentials } from '../services/validator';
-import { User } from '../models';
+import { User, UserTask } from '../models';
 import { inject } from '@loopback/core';
 import { sendEmail } from '../services/Mailer'
 import * as _ from 'lodash';
@@ -23,6 +34,8 @@ export class UserController {
   constructor(
     @repository(UserRepository)
     public userRepository: UserRepository,
+    @repository(UserTaskRepository)
+    public userTaskRepository: UserTaskRepository,
     @inject(PasswordHasherBindings.PASSWORD_HASHER)
     public hasher: BcryptHasher,
     @inject(UserServiceBindings.USER_SERVICE)
@@ -88,7 +101,7 @@ export class UserController {
     if (!user.active) {
       throw new HttpErrors.Unauthorized('user has not verified email')
     }
-    const token = await this.jwtService.generateToken(userProfile)
+    const token = user.id//await this.jwtService.generateToken(userProfile)
     return Promise.resolve({ token })
   }
 
@@ -135,11 +148,67 @@ export class UserController {
       },
     },
   })
-
   async replaceById(
     @param.path.string('id') id: string,
     @requestBody() currentUser: User,
   ): Promise<void> {
     await this.userRepository.replaceById(id, currentUser);
+  }
+
+  @post('/users/task/create', {
+    responses: {
+      '200': {
+        description: 'Create user task model instance',
+        content: { 'application/json': { schema: getModelSchemaRef(UserTask) } },
+      },
+    },
+  })
+  async create(
+    @requestBody({
+      content: {
+        'application/json': {
+          schema: getModelSchemaRef(UserTask),
+        },
+      },
+    })
+    usertask: UserTask,
+  ): Promise<UserTask> {
+    return await this.userTaskRepository.create(usertask);
+  }
+
+  @patch('/users/task/{id}', {
+    responses: {
+      '204': {
+        description: 'Todo PATCH success',
+      },
+    },
+  })
+  async updateById(
+    @param.path.string('id') id: string,
+    @requestBody({
+      content: {
+        'application/json': {
+          schema: getModelSchemaRef(UserTask, { partial: true }),
+        },
+      },
+    })
+    userTask: UserTask,
+  ): Promise<void> {
+    await this.userTaskRepository.updateById(id, userTask);
+  }
+
+  @get('/users/task', {
+    responses: {
+      '200': {
+        description: 'Position model instance',
+        content: { 'application/json': { schema: getModelSchemaRef(UserTask) } },
+      },
+    },
+  })
+  async find(
+    @param.query.object('filter', getFilterSchemaFor(UserTask))
+    filter?: Filter<UserTask>,
+  ): Promise<UserTask[]> {
+    return this.userTaskRepository.find(filter);
   }
 }
