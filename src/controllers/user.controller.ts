@@ -1,5 +1,5 @@
 import { repository, Filter } from '@loopback/repository';
-import { UserRepository, Credentials, UserTaskRepository } from '../repositories/';
+import { UserRepository, Credentials, UserTaskRepository, UserSkillRepository } from '../repositories/';
 import {
   post,
   patch,
@@ -13,7 +13,7 @@ import {
   HttpErrors
 } from '@loopback/rest';
 import { validateCredentials } from '../services/validator';
-import { User, UserTask } from '../models';
+import { User, UserTask, UserSkill } from '../models';
 import { inject } from '@loopback/core';
 import { sendEmail } from '../services/Mailer'
 import * as _ from 'lodash';
@@ -36,6 +36,8 @@ export class UserController {
     public userRepository: UserRepository,
     @repository(UserTaskRepository)
     public userTaskRepository: UserTaskRepository,
+    @repository(UserSkillRepository)
+    public userSkillRepository: UserSkillRepository,
     @inject(PasswordHasherBindings.PASSWORD_HASHER)
     public hasher: BcryptHasher,
     @inject(UserServiceBindings.USER_SERVICE)
@@ -81,7 +83,7 @@ export class UserController {
     userData.password = await this.hasher.hashPassword(userData.password);
     const secretToken = randomstring.generate();
     userData.secretToken = secretToken
-    userData.active = false
+    userData.active = true;
     sendEmail(userData.email, secretToken)
     const savedUser = await this.userRepository.create(userData);
     console.log(userData.email)
@@ -89,11 +91,42 @@ export class UserController {
     return savedUser;
   }
 
+  @post('/users/forgot', {
+    responses: {
+      '204': {
+        description: 'Todo PATCH success',
+      },
+    },
+  })
+  async forgot(
+    @requestBody({
+      content: {
+        'application/json': {
+          schema: getModelSchemaRef(User),
+        },
+      },
+    })
+    userData: User,
+  ): Promise<void> {
+    const foundUser = await this.userRepository.findOne({
+      where: {
+        email: userData.email,
+      },
+    });
+    if (!foundUser) {
+      throw new HttpErrors.Forbidden(`No email found`);
+    }
+    const user = { ...foundUser };
+    const new_password = Math.random().toString(36).slice(-8);
+    sendEmail(foundUser.email, new_password);
+    user.password = await this.hasher.hashPassword(new_password);
+    return await this.userRepository.updateById(foundUser.id, user);
+  }
 
 
   @post('/users/login', ResponseType)
 
-  async login(@requestBody(CreadentialsRequestBody) credentials: Credentials): Promise<{ token: string }> {
+  async login(@requestBody(CreadentialsRequestBody) credentials: Credentials): Promise<{ token: Object }> {
     const user = await this.userService.verifyCredentials(credentials)
     //console.log(user)
     const userProfile = this.userService.convertToUserProfile(user)
@@ -101,8 +134,10 @@ export class UserController {
     if (!user.active) {
       throw new HttpErrors.Unauthorized('user has not verified email')
     }
-    const token = user.id//await this.jwtService.generateToken(userProfile)
-    return Promise.resolve({ token })
+    user.count = String(Number(user.count) + 1);
+    const token = {id: user.id, count: user.count};//await this.jwtService.generateToken(userProfile)
+    const update = await this.userRepository.updateById(user.id, user);
+    return Promise.resolve({token})
   }
 
   @post('/users/verify')
@@ -210,5 +245,62 @@ export class UserController {
     filter?: Filter<UserTask>,
   ): Promise<UserTask[]> {
     return this.userTaskRepository.find(filter);
+  }
+
+  @post('/users/skill/new', {
+    responses: {
+      '200': {
+        description: 'Create user skill model instance',
+        content: { 'application/json': { schema: getModelSchemaRef(UserSkill) } },
+      },
+    },
+  })
+  async new(
+    @requestBody({
+      content: {
+        'application/json': {
+          schema: getModelSchemaRef(UserSkill),
+        },
+      },
+    })
+    userSkill: UserSkill,
+  ): Promise<UserSkill> {
+    return await this.userSkillRepository.create(userSkill);
+  }
+
+  @get('/users/skill', {
+    responses: {
+      '200': {
+        description: 'User skill',
+        content: { 'application/json': { schema: getModelSchemaRef(UserSkill) } },
+      },
+    },
+  })
+  async skill(
+    @param.query.object('filter', getFilterSchemaFor(UserSkill))
+    filter?: Filter<UserSkill>,
+  ): Promise<UserSkill[]> {
+    return this.userSkillRepository.find(filter);
+  }
+
+  @patch('/users/skill/{id}', {
+    responses: {
+      '204': {
+        description: 'Skill update success',
+      },
+    },
+  })
+  async skillUpdate(
+    @param.path.string('id') id: string,
+    @requestBody({
+      content: {
+        'application/json': {
+          schema: getModelSchemaRef(UserSkill, { partial: true }),
+        },
+      },
+    })
+    userSkill: UserSkill,
+  ): Promise<void> {
+    await this.userSkillRepository.updateById(id, userSkill);
   }
 }

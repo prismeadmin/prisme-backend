@@ -45,6 +45,13 @@ export class User extends Entity {
   })
   active: boolean;
 
+  @property({
+    type: 'string',
+    required: false,
+    default: '0'
+  })
+  count: string;
+
   @property.array(String)
   permissions: String[]
 
